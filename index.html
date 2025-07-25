@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精算学专业深度解析</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        // 配置 Tailwind CSS
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tesla-red': '#E31937'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --tesla-red: #E31937;
+        }
+        body {
+            background: #000000;
+            color: #ffffff;
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+        .tesla-red {
+            color: var(--tesla-red);
+        }
+        .bg-tesla-red {
+            background-color: var(--tesla-red);
+        }
+        .border-tesla-red {
+            border-color: var(--tesla-red);
+        }
+        .bg-tesla-red-dark {
+            background-color: rgba(227, 25, 55, 0.2);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(227, 25, 55, 0.3);
+        }
+        .number-big {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+        .title-huge {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+        }
+        .subtitle-large {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .text-small-en {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            font-family: 'Arial', sans-serif;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .text-medium-en {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            font-family: 'Arial', sans-serif;
+            letter-spacing: 0.3px;
+        }
+        .text-description {
+            font-size: 0.875rem;
+            line-height: 1.6;
+            color: #d1d5db;
+        }
+        .text-caption {
+            font-size: 0.75rem;
+            line-height: 1.5;
+            color: #9ca3af;
+        }
+        .grid-bento {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+        .span-6 { grid-column: span 6; }
+        .span-4 { grid-column: span 4; }
+        .span-3 { grid-column: span 3; }
+        .span-8 { grid-column: span 8; }
+        .span-12 { grid-column: span 12; }
+        .row-span-2 { grid-row: span 2; }
+        
+        @media (max-width: 768px) {
+            .span-6, .span-4, .span-3, .span-8 { grid-column: span 12; }
+            .title-huge {
+                font-size: 2.5rem;
+                line-height: 1.2;
+            }
+            .number-big {
+                font-size: 3rem;
+                line-height: 1;
+            }
+            .text-description {
+                font-size: 0.8rem;
+                line-height: 1.5;
+            }
+            .text-small-en {
+                font-size: 0.7rem;
+            }
+            .grid-bento {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title-huge {
+                font-size: 2rem;
+            }
+            .number-big {
+                font-size: 2.5rem;
+            }
+            .text-description {
+                font-size: 0.75rem;
+            }
+        }
+        
+        .line-graphic {
+            position: relative;
+        }
+        .line-graphic::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--tesla-red), transparent);
+        }
+        
+        .counter {
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-6">
+    <div class="max-w-7xl mx-auto">
+        <!-- 标题区域 -->
+        <div class="text-center mb-12">
+            <h1 class="title-huge tesla-red mb-4 font-black">精算学专业</h1>
+            <h2 class="text-3xl md:text-4xl font-bold mb-3 text-gray-100">深度解析与发展指南</h2>
+            <p class="text-medium-en text-gray-400 tracking-wider">ACTUARIAL SCIENCE COMPREHENSIVE GUIDE</p>
+            <div class="w-32 h-1 bg-tesla-red mx-auto mt-6 rounded-full"></div>
+        </div>
+
+        <!-- Bento Grid 主体内容 -->
+        <div class="grid-bento mb-12">
+            <!-- 专业核心优势 - 大卡片 -->
+            <div class="span-8 bg-gray-900 rounded-2xl p-8 card-hover border border-gray-800 line-graphic">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-star text-3xl tesla-red mr-4"></i>
+                    <h3 class="text-3xl font-bold">核心竞争优势</h3>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-tesla-red-dark rounded-xl p-6 border border-tesla-red">
+                        <h4 class="text-xl font-bold mb-3 tesla-red">数理基础</h4>
+                        <p class="text-sm">深厚的数学统计基础，为复杂金融建模提供理论支撑</p>
+                        <p class="text-small-en mt-2">MATHEMATICAL FOUNDATION</p>
+                    </div>
+                    <div class="bg-tesla-red-dark rounded-xl p-6 border border-tesla-red">
+                        <h4 class="text-xl font-bold mb-3 tesla-red">风险量化</h4>
+                        <p class="text-sm">深度数理建模与风险定价能力，区别于传统金融</p>
+                        <p class="text-small-en mt-2">RISK QUANTIFICATION</p>
+                    </div>
+                    <div class="bg-tesla-red-dark rounded-xl p-6 border border-tesla-red">
+                        <h4 class="text-xl font-bold mb-3 tesla-red">商业应用</h4>
+                        <p class="text-sm">广泛应用于保险、银行、投资等金融领域，理论实践紧密结合</p>
+                        <p class="text-small-en mt-2">BUSINESS APPLICATION</p>
+                    </div>
+                    <div class="bg-tesla-red-dark rounded-xl p-6 border border-tesla-red">
+                        <h4 class="text-xl font-bold mb-3 tesla-red">跨界融合</h4>
+                        <p class="text-sm">经济学+统计学+金融学多学科交叉优势</p>
+                        <p class="text-small-en mt-2">INTERDISCIPLINARY</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 专业深度 - 小卡片 -->
+            <div class="span-4 bg-gray-900 rounded-2xl p-6 card-hover border border-gray-800">
+                <div class="text-center">
+                    <i class="fas fa-brain text-4xl tesla-red mb-4"></i>
+                    <div class="number-big tesla-red counter font-black" data-target="8">0</div>
+                    <p class="text-xl font-bold text-gray-100 mt-2">大学科</p>
+                    <p class="text-description mt-1">交叉融合</p>
+                    <p class="text-small-en mt-3">INTERDISCIPLINARY</p>
+                </div>
+            </div>
+
+            <!-- 职业发展路径 -->
+            <div class="span-6 bg-gray-900 rounded-2xl p-6 card-hover border border-gray-800">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-route tesla-red mr-3"></i>
+                    职业发展路径
+                </h3>
+                <div class="space-y-4">
+                    <div class="p-4 bg-gray-800 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="w-3 h-3 bg-tesla-red rounded-full mr-4"></div>
+                            <div>
+                                <p class="text-lg font-bold">保险精算</p>
+                                <p class="text-sm text-small-en opacity-80">INSURANCE ACTUARIAL</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-300 ml-7 leading-relaxed">传统核心领域，运用生存模型和随机过程进行产品定价与准备金评估</p>
+                    </div>
+
+                    <div class="p-4 bg-gray-800 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="w-3 h-3 bg-tesla-red rounded-full mr-4"></div>
+                            <div>
+                                <p class="text-lg font-bold">金融风险管理</p>
+                                <p class="text-sm text-small-en opacity-80">FINANCIAL RISK MANAGEMENT</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-300 ml-7 leading-relaxed mb-2">银行、投资机构风险控制，精算学的风险量化基础与FRM认证高度契合</p>
+                        <div class="ml-7 p-2 bg-gray-700 rounded text-xs">
+                            <span class="text-tesla-red font-semibold">FRM认证优势：</span>
+                            <span class="text-gray-300">精算学的随机过程和数理统计知识直接应用于风险模型构建，为银行风险管理岗位提供强有力支撑</span>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-gray-800 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="w-3 h-3 bg-tesla-red rounded-full mr-4"></div>
+                            <div>
+                                <p class="text-lg font-bold">投资分析与资产管理</p>
+                                <p class="text-sm text-small-en opacity-80">INVESTMENT & ASSET MANAGEMENT</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-300 ml-7 leading-relaxed mb-2">基金、证券公司投资分析，精算学数理基础为CFA学习提供显著优势</p>
+                        <div class="ml-7 p-2 bg-gray-700 rounded text-xs">
+                            <span class="text-tesla-red font-semibold">CFA认证契合：</span>
+                            <span class="text-gray-300">金融数学知识在衍生品定价和固定收益分析中优势明显，为资产管理和量化投资奠定基础</span>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-gray-800 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="w-3 h-3 bg-tesla-red rounded-full mr-4"></div>
+                            <div>
+                                <p class="text-lg font-bold">精算咨询服务</p>
+                                <p class="text-sm text-small-en opacity-80">ACTUARIAL CONSULTING</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-300 ml-7 leading-relaxed mb-2">专业咨询机构，提供精算建模、风险评估和财务预测等综合分析服务</p>
+                        <div class="ml-7 p-2 bg-gray-700 rounded text-xs">
+                            <span class="text-tesla-red font-semibold">CCA认证价值：</span>
+                            <span class="text-gray-300">专业精算认证为咨询服务提供权威性支撑，但需注意该领域就业岗位相对较少</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 核心课程体系 -->
+            <div class="span-3 bg-gray-900 rounded-2xl p-6 card-hover border border-gray-800">
+                <h4 class="text-xl font-bold mb-4 tesla-red">核心课程</h4>
+                <div class="space-y-3">
+                    <div class="p-3 bg-gray-800 rounded-lg text-center">
+                        <p class="font-bold text-gray-100 text-sm">金融数学</p>
+                        <p class="text-small-en mt-1">Financial Mathematics</p>
+                    </div>
+                    <div class="p-3 bg-gray-800 rounded-lg text-center">
+                        <p class="font-bold text-gray-100 text-sm">随机过程</p>
+                        <p class="text-small-en mt-1">Stochastic Process</p>
+                    </div>
+                    <div class="p-3 bg-gray-800 rounded-lg text-center">
+                        <p class="font-bold text-gray-100 text-sm">生存模型</p>
+                        <p class="text-small-en mt-1">Survival Models</p>
+                    </div>
+                    <div class="p-3 bg-gray-800 rounded-lg text-center">
+                        <p class="font-bold text-gray-100 text-sm">风险理论</p>
+                        <p class="text-small-en mt-1">Risk Theory</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 专业技能工具 -->
+            <div class="span-3 bg-gray-900 rounded-2xl p-6 card-hover border border-gray-800">
+                <h4 class="text-xl font-bold mb-4 tesla-red">专业工具</h4>
+                <div class="space-y-3">
+                    <div class="p-3 bg-gray-800 rounded-lg text-center">
+                        <p class="font-bold text-gray-100 text-sm">Python/R</p>
+                        <p class="text-small-en mt-1">Statistical Computing</p>
+                    </div>
+                    <div class="p-3 bg-gray-800 rounded-lg text-center">
+                        <p class="font-bold text-gray-100 text-sm">MATLAB</p>
+                        <p class="text-small-en mt-1">Mathematical Modeling</p>
+                    </div>
+                    <div class="p-3 bg-gray-800 rounded-lg text-center">
+                        <p class="font-bold text-gray-100 text-sm">SAS/SPSS</p>
+                        <p class="text-small-en mt-1">Data Analysis</p>
+                    </div>
+                    <div class="p-3 bg-gray-800 rounded-lg text-center">
+                        <p class="font-bold text-gray-100 text-sm">Excel VBA</p>
+                        <p class="text-small-en mt-1">Business Modeling</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 技能提升要求 -->
+        <div class="bg-gray-900 rounded-2xl p-8 mb-12 border border-gray-800">
+            <h3 class="text-3xl font-bold mb-8 text-center">
+                <i class="fas fa-cogs tesla-red mr-4"></i>
+                核心技能提升路径
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center p-6 bg-tesla-red-dark rounded-xl border border-tesla-red">
+                    <i class="fas fa-chart-pie text-3xl tesla-red mb-4"></i>
+                    <h4 class="text-lg font-bold mb-2">投资组合理论</h4>
+                    <p class="text-sm text-gray-300 leading-relaxed">现代投资组合理论与风险分散策略</p>
+                </div>
+
+                <div class="text-center p-6 bg-tesla-red-dark rounded-xl border border-tesla-red">
+                    <i class="fas fa-file-invoice-dollar text-3xl tesla-red mb-4"></i>
+                    <h4 class="text-lg font-bold mb-2">财务报表分析</h4>
+                    <p class="text-sm text-gray-300 leading-relaxed">企业财务健康状况深度评估</p>
+                </div>
+
+                <div class="text-center p-6 bg-tesla-red-dark rounded-xl border border-tesla-red">
+                    <i class="fas fa-calculator text-3xl tesla-red mb-4"></i>
+                    <h4 class="text-lg font-bold mb-2">风险度量模型</h4>
+                    <p class="text-sm text-gray-300 leading-relaxed">VaR、ES等风险量化方法</p>
+                </div>
+
+                <div class="text-center p-6 bg-tesla-red-dark rounded-xl border border-tesla-red">
+                    <i class="fas fa-code text-3xl tesla-red mb-4"></i>
+                    <h4 class="text-lg font-bold mb-2">量化建模技术</h4>
+                    <p class="text-sm text-gray-300 leading-relaxed">Python、R、MATLAB建模分析</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 专业应用案例 -->
+        <div class="grid-bento mb-12">
+            <div class="span-8 bg-gray-900 rounded-2xl p-8 card-hover border border-gray-800">
+                <h3 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-lightbulb tesla-red mr-3"></i>
+                    精算学实际应用案例
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-4 bg-gray-800 rounded-lg">
+                        <h4 class="font-bold tesla-red mb-2">保险产品定价</h4>
+                        <p class="text-sm">运用生存模型和随机过程，精确计算人寿保险费率，确保保险公司财务稳健</p>
+                        <p class="text-small-en mt-1">INSURANCE PRICING</p>
+                    </div>
+                    <div class="p-4 bg-gray-800 rounded-lg">
+                        <h4 class="font-bold tesla-red mb-2">银行信贷风险</h4>
+                        <p class="text-sm">构建违约概率模型，评估贷款组合风险，优化银行资本配置策略</p>
+                        <p class="text-small-en mt-1">CREDIT RISK MODELING</p>
+                    </div>
+                    <div class="p-4 bg-gray-800 rounded-lg">
+                        <h4 class="font-bold tesla-red mb-2">投资组合优化</h4>
+                        <p class="text-sm">应用现代投资组合理论，在风险约束下实现收益最大化的资产配置</p>
+                        <p class="text-small-en mt-1">PORTFOLIO OPTIMIZATION</p>
+                    </div>
+                    <div class="p-4 bg-gray-800 rounded-lg">
+                        <h4 class="font-bold tesla-red mb-2">衍生品定价</h4>
+                        <p class="text-sm">利用随机微分方程和蒙特卡洛模拟，为复杂金融衍生品进行精确定价</p>
+                        <p class="text-small-en mt-1">DERIVATIVES PRICING</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="span-4 bg-gray-900 rounded-2xl p-6 card-hover border border-gray-800">
+                <h4 class="text-lg font-bold mb-4 tesla-red text-center">专业培养特色</h4>
+                <div class="space-y-4">
+                    <div class="p-3 bg-gray-800 rounded-lg">
+                        <h5 class="font-bold text-sm mb-2">理论与实践结合</h5>
+                        <p class="text-xs text-gray-300">课程设计紧贴行业需求，注重实际案例分析和应用</p>
+                    </div>
+                    <div class="p-3 bg-gray-800 rounded-lg">
+                        <h5 class="font-bold text-sm mb-2">全球化视野</h5>
+                        <p class="text-xs text-gray-300">培养具备国际金融市场理解能力的专业人才</p>
+                    </div>
+                    <div class="p-3 bg-gray-800 rounded-lg">
+                        <h5 class="font-bold text-sm mb-2">跨学科融合</h5>
+                        <p class="text-xs text-gray-300">数学、统计、金融、经济多学科知识体系整合</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 差异化优势对比 -->
+        <div class="bg-gray-900 rounded-2xl p-8 mb-12 border border-gray-800">
+            <h3 class="text-3xl font-bold mb-8 text-center">
+                <i class="fas fa-balance-scale tesla-red mr-4"></i>
+                与相关专业深度对比分析
+            </h3>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b border-gray-700">
+                            <th class="text-left p-4 tesla-red">专业</th>
+                            <th class="text-left p-4">核心课程体系</th>
+                            <th class="text-left p-4">专业能力特色</th>
+                            <th class="text-left p-4">应用领域</th>
+                            <th class="text-left p-4">培养目标差异</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-800 bg-red-900/10">
+                            <td class="p-4 font-bold tesla-red">精算学</td>
+                            <td class="p-4">金融数学、随机过程、生存模型、风险理论、信度理论</td>
+                            <td class="p-4">风险量化建模、精确定价、复杂数理分析</td>
+                            <td class="p-4">保险精算、银行风险管理、量化投资、衍生品定价</td>
+                            <td class="p-4">培养风险量化专家，具备深度数理建模能力</td>
+                        </tr>
+                        <tr class="border-b border-gray-800">
+                            <td class="p-4 font-bold">金融学</td>
+                            <td class="p-4">货币银行学、证券投资、国际金融、公司金融、金融市场</td>
+                            <td class="p-4">资本运作、市场分析、投资决策、财务管理</td>
+                            <td class="p-4">银行、证券、基金、投资银行、企业财务</td>
+                            <td class="p-4">培养金融通才，侧重宏观金融理论与市场实务</td>
+                        </tr>
+                        <tr class="border-b border-gray-800">
+                            <td class="p-4 font-bold">数学/统计学</td>
+                            <td class="p-4">数学分析、高等代数、概率论、数理统计、回归分析</td>
+                            <td class="p-4">抽象思维、逻辑推理、通用建模、数据分析</td>
+                            <td class="p-4">科研院所、数据科学、算法工程、教育行业</td>
+                            <td class="p-4">培养数理基础人才，强调理论深度与通用性</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold">保险学</td>
+                            <td class="p-4">保险学原理、保险法、风险管理、保险营销、保险经营</td>
+                            <td class="p-4">保险业务理解、法律法规掌握、市场营销</td>
+                            <td class="p-4">保险公司业务岗、保险经纪、保险监管、企业风险管理</td>
+                            <td class="p-4">培养保险行业专才，注重业务流程与管理实务</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 专业核心差异总结 -->
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-6 bg-gray-800 rounded-lg">
+                    <h4 class="font-bold tesla-red mb-4 flex items-center">
+                        <i class="fas fa-calculator mr-2"></i>
+                        精算学独特优势
+                    </h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-tesla-red rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span>深度数理建模能力，能构建复杂的风险量化模型</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-tesla-red rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span>精确定价技术，在保险费率和金融产品定价方面具有专业优势</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-tesla-red rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span>跨学科知识融合，结合数学、统计、金融、经济多领域知识</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-tesla-red rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span>专业化培养模式，具备全球金融市场的适应能力</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="p-6 bg-gray-800 rounded-lg">
+                    <h4 class="font-bold tesla-red mb-4 flex items-center">
+                        <i class="fas fa-chart-line mr-2"></i>
+                        与其他专业的互补性
+                    </h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-tesla-red rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span>相比金融学：更强的数理基础和风险量化能力</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-tesla-red rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span>相比数学/统计学：更强的商业应用和行业针对性</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-tesla-red rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span>相比保险学：更深的技术深度和模型构建能力</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-tesla-red rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span>在金融科技时代具备独特的技术与业务融合优势</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 专业课程体系详解 -->
+        <div class="bg-gray-900 rounded-2xl p-8 mb-12 border border-gray-800">
+            <h3 class="text-3xl font-bold mb-8 text-center tesla-red">专业课程体系深度解析</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="p-6 bg-gray-800 rounded-xl">
+                    <h4 class="text-xl font-bold tesla-red mb-4 flex items-center">
+                        <i class="fas fa-square-root-alt mr-2"></i>
+                        数学基础模块
+                    </h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="p-3 bg-gray-700 rounded">
+                            <p class="font-bold">数学分析</p>
+                            <p class="text-xs text-gray-300">微积分理论基础，为后续精算建模提供数学工具</p>
+                        </div>
+                        <div class="p-3 bg-gray-700 rounded">
+                            <p class="font-bold">线性代数</p>
+                            <p class="text-xs text-gray-300">矩阵运算与线性变换，支撑多元统计分析</p>
+                        </div>
+                        <div class="p-3 bg-gray-700 rounded">
+                            <p class="font-bold">概率论</p>
+                            <p class="text-xs text-gray-300">随机现象数学描述，精算学的理论基石</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-gray-800 rounded-xl">
+                    <h4 class="text-xl font-bold tesla-red mb-4 flex items-center">
+                        <i class="fas fa-chart-bar mr-2"></i>
+                        统计分析模块
+                    </h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="p-3 bg-gray-700 rounded">
+                            <p class="font-bold">数理统计</p>
+                            <p class="text-xs text-gray-300">参数估计与假设检验，数据分析的核心方法</p>
+                        </div>
+                        <div class="p-3 bg-gray-700 rounded">
+                            <p class="font-bold">随机过程</p>
+                            <p class="text-xs text-gray-300">时间序列建模，描述动态随机现象</p>
+                        </div>
+                        <div class="p-3 bg-gray-700 rounded">
+                            <p class="font-bold">多元统计分析</p>
+                            <p class="text-xs text-gray-300">处理多维数据关系，支持复杂风险建模</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-gray-800 rounded-xl">
+                    <h4 class="text-xl font-bold tesla-red mb-4 flex items-center">
+                        <i class="fas fa-coins mr-2"></i>
+                        金融经济模块
+                    </h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="p-3 bg-gray-700 rounded">
+                            <p class="font-bold">金融数学</p>
+                            <p class="text-xs text-gray-300">利率理论与金融工具定价的数学基础</p>
+                        </div>
+                        <div class="p-3 bg-gray-700 rounded">
+                            <p class="font-bold">微观经济学</p>
+                            <p class="text-xs text-gray-300">市场机制与个体决策理论</p>
+                        </div>
+                        <div class="p-3 bg-gray-700 rounded">
+                            <p class="font-bold">宏观经济学</p>
+                            <p class="text-xs text-gray-300">经济周期与政策影响分析</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-gray-800 rounded-xl">
+                    <h4 class="text-xl font-bold tesla-red mb-4 flex items-center">
+                        <i class="fas fa-shield-alt mr-2"></i>
+                        精算核心模块
+                    </h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="p-3 bg-gray-700 rounded">
+                            <p class="font-bold">生存模型</p>
+                            <p class="text-xs text-gray-300">死亡率建模与生命表构造</p>
+                        </div>
+                        <div class="p-3 bg-gray-700 rounded">
+                            <p class="font-bold">精算风险理论</p>
+                            <p class="text-xs text-gray-300">损失分布与风险度量方法</p>
+                        </div>
+                        <div class="p-3 bg-gray-700 rounded">
+                            <p class="font-bold">信度理论</p>
+                            <p class="text-xs text-gray-300">经验费率调整与贝叶斯方法</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-gray-800 rounded-xl">
+                    <h4 class="text-xl font-bold tesla-red mb-4 flex items-center">
+                        <i class="fas fa-building mr-2"></i>
+                        保险业务模块
+                    </h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="p-3 bg-gray-700 rounded">
+                            <p class="font-bold">人身保险</p>
+                            <p class="text-xs text-gray-300">寿险、健康险产品设计与定价</p>
+                        </div>
+                        <div class="p-3 bg-gray-700 rounded">
+                            <p class="font-bold">财产保险</p>
+                            <p class="text-xs text-gray-300">财产险费率厘定与准备金评估</p>
+                        </div>
+                        <div class="p-3 bg-gray-700 rounded">
+                            <p class="font-bold">再保险</p>
+                            <p class="text-xs text-gray-300">风险分散与再保险定价策略</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-gray-800 rounded-xl">
+                    <h4 class="text-xl font-bold tesla-red mb-4 flex items-center">
+                        <i class="fas fa-globe mr-2"></i>
+                        应用拓展模块
+                    </h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="p-3 bg-gray-700 rounded">
+                            <p class="font-bold">专业英语</p>
+                            <p class="text-xs text-gray-300">精算专业英语能力培养</p>
+                        </div>
+                        <div class="p-3 bg-gray-700 rounded">
+                            <p class="font-bold">国际金融</p>
+                            <p class="text-xs text-gray-300">全球金融市场与汇率风险</p>
+                        </div>
+                        <div class="p-3 bg-gray-700 rounded">
+                            <p class="font-bold">金融法规</p>
+                            <p class="text-xs text-gray-300">金融监管与合规要求</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- 专业发展建议 -->
+        <div class="bg-gray-900 rounded-2xl p-8 mb-12 border border-gray-800">
+            <h3 class="text-3xl font-bold mb-8 text-center tesla-red">专业发展核心建议</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="number-big tesla-red mb-4">01</div>
+                    <h4 class="text-xl font-bold mb-4">深化专业理解</h4>
+                    <p class="text-sm mb-4">全面理解精算学的跨学科特性和在金融行业的广泛应用价值</p>
+                    <div class="text-xs text-gray-400">
+                        <p>• 掌握风险量化核心理论</p>
+                        <p>• 理解数理建模实际应用</p>
+                        <p>• 建立跨学科思维模式</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="number-big tesla-red mb-4">02</div>
+                    <h4 class="text-xl font-bold mb-4">强化实践能力</h4>
+                    <p class="text-sm mb-4">通过项目实践和案例分析，将理论知识转化为实际应用能力</p>
+                    <div class="text-xs text-gray-400">
+                        <p>• 参与校企合作项目</p>
+                        <p>• 进行实际案例分析</p>
+                        <p>• 掌握专业软件工具</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="number-big tesla-red mb-4">03</div>
+                    <h4 class="text-xl font-bold mb-4">拓展全球视野</h4>
+                    <p class="text-sm mb-4">培养国际化思维，提升全球金融市场的理解和适应能力</p>
+                    <div class="text-xs text-gray-400">
+                        <p>• 提升专业英语水平</p>
+                        <p>• 了解国际金融规则</p>
+                        <p>• 关注全球市场动态</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 相关认证简介 -->
+        <div class="bg-gray-900 rounded-2xl p-8 border border-gray-800">
+            <h3 class="text-3xl font-bold mb-8 text-center tesla-red">相关认证简介</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center p-6 bg-gray-800 rounded-xl">
+                    <div class="mb-4">
+                        <i class="fas fa-award text-3xl tesla-red mb-3"></i>
+                        <h4 class="text-lg font-bold text-gray-100">CFA</h4>
+                        <p class="text-sm text-gray-400 mb-3">特许金融分析师</p>
+                    </div>
+                    <p class="text-sm text-gray-300 leading-relaxed">通用金融投资认证，涵盖投资组合管理、权益投资、固定收益等领域，适合投资分析与资产管理方向</p>
+                </div>
+
+                <div class="text-center p-6 bg-gray-800 rounded-xl">
+                    <div class="mb-4">
+                        <i class="fas fa-shield-alt text-3xl tesla-red mb-3"></i>
+                        <h4 class="text-lg font-bold text-gray-100">FRM</h4>
+                        <p class="text-sm text-gray-400 mb-3">金融风险管理师</p>
+                    </div>
+                    <p class="text-sm text-gray-300 leading-relaxed">风险管理专业认证，专注于市场风险、信用风险、操作风险等量化分析，与精算学风险建模基础高度契合</p>
+                </div>
+
+                <div class="text-center p-6 bg-gray-800 rounded-xl">
+                    <div class="mb-4">
+                        <i class="fas fa-calculator text-3xl tesla-red mb-3"></i>
+                        <h4 class="text-lg font-bold text-gray-100">CCA相关证书</h4>
+                        <p class="text-sm text-gray-400 mb-3">专业精算认证</p>
+                    </div>
+                    <p class="text-sm text-gray-300 leading-relaxed">专业精算领域的权威认证，直接对应精算师职业发展路径</p>
+                </div>
+            </div>
+
+            <div class="mt-6 text-center">
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    以上认证可根据个人职业发展方向选择性考虑，建议结合专业学习进度和实习经验合理规划
+                </p>
+            </div>
+        </div>
+
+        <!-- 总结与展望 -->
+        <div class="mt-12 text-center bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-12 border border-gray-700">
+            <h3 class="text-4xl font-bold mb-6">
+                <span class="tesla-red">未来可期</span> · 精算无界
+            </h3>
+            <p class="text-xl mb-8 max-w-4xl mx-auto leading-relaxed">
+                精算学专业凭借其独特的数理基础与商业应用相结合的特色，
+                为学生在金融行业的多元化发展奠定了坚实基础。
+                从传统保险精算到金融科技创新，从风险管理到量化投资，
+                精算学毕业生正在用数理智慧重新定义金融行业的边界。
+            </p>
+            <div class="flex justify-center items-center space-x-8 text-sm">
+                <div class="flex items-center">
+                    <i class="fas fa-graduation-cap tesla-red mr-2"></i>
+                    <span>专业深度</span>
+                </div>
+                <div class="w-2 h-2 bg-tesla-red rounded-full"></div>
+                <div class="flex items-center">
+                    <i class="fas fa-globe tesla-red mr-2"></i>
+                    <span>国际视野</span>
+                </div>
+                <div class="w-2 h-2 bg-tesla-red rounded-full"></div>
+                <div class="flex items-center">
+                    <i class="fas fa-rocket tesla-red mr-2"></i>
+                    <span>创新应用</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页脚信息 -->
+        <footer class="mt-16 text-center text-gray-500 text-sm">
+            <div class="border-t border-gray-800 pt-8">
+                <p class="mb-2">精算学专业深度解析与发展指南</p>
+                <p class="text-small-en">ACTUARIAL SCIENCE COMPREHENSIVE GUIDE</p>
+                <p class="mt-4 text-xs">© 2025 · 数据来源于专业调研与行业分析</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // 数字计数动画
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current);
+            }, 16);
+        }
+
+        // 页面滚动视差效果
+        function handleScroll() {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.title-huge');
+            if (parallax) {
+                const speed = scrolled * 0.3;
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+        }
+
+        // 添加页面加载动画
+        function addLoadAnimation() {
+            const elements = document.querySelectorAll('.card-hover, .bg-tesla-red-dark');
+            elements.forEach((element, index) => {
+                if (element) {
+                    element.style.opacity = '0';
+                    element.style.transform = 'translateY(20px)';
+                    element.style.transition = 'all 0.6s ease';
+
+                    setTimeout(() => {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }, index * 50);
+                }
+            });
+        }
+
+        // 页面加载完成后启动所有动画和效果
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                // 启动计数器动画
+                const counters = document.querySelectorAll('.counter');
+                if (counters.length > 0) {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                animateCounter(entry.target);
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.5 });
+
+                    counters.forEach(counter => {
+                        observer.observe(counter);
+                    });
+                }
+
+                // 卡片悬停效果增强
+                const cards = document.querySelectorAll('.card-hover');
+                cards.forEach(card => {
+                    card.addEventListener('mouseenter', function() {
+                        this.style.transform = 'translateY(-8px) scale(1.02)';
+                        this.style.boxShadow = '0 25px 50px rgba(227, 25, 55, 0.4)';
+                    });
+
+                    card.addEventListener('mouseleave', function() {
+                        this.style.transform = 'translateY(0) scale(1)';
+                        this.style.boxShadow = 'none';
+                    });
+                });
+
+                // 表格行悬停效果
+                const tableRows = document.querySelectorAll('tbody tr');
+                tableRows.forEach(row => {
+                    row.addEventListener('mouseenter', function() {
+                        this.style.backgroundColor = 'rgba(227, 25, 55, 0.1)';
+                        this.style.transform = 'scale(1.01)';
+                        this.style.transition = 'all 0.3s ease';
+                    });
+
+                    row.addEventListener('mouseleave', function() {
+                        this.style.backgroundColor = 'transparent';
+                        this.style.transform = 'scale(1)';
+                    });
+                });
+
+                // 启动页面加载动画
+                setTimeout(addLoadAnimation, 100);
+
+                // 添加滚动视差效果
+                window.addEventListener('scroll', handleScroll);
+
+                // 响应式字体大小调整
+                function adjustFontSizes() {
+                    const width = window.innerWidth;
+                    const titleElements = document.querySelectorAll('.title-huge');
+                    const numberElements = document.querySelectorAll('.number-big');
+                    const descriptionElements = document.querySelectorAll('.text-description');
+                    const smallEnElements = document.querySelectorAll('.text-small-en');
+
+                    if (width < 480) {
+                        // 超小屏幕
+                        titleElements.forEach(el => {
+                            el.style.fontSize = '2rem';
+                            el.style.lineHeight = '1.2';
+                        });
+                        numberElements.forEach(el => el.style.fontSize = '2.5rem');
+                        descriptionElements.forEach(el => el.style.fontSize = '0.75rem');
+                        smallEnElements.forEach(el => el.style.fontSize = '0.7rem');
+                    } else if (width < 768) {
+                        // 小屏幕
+                        titleElements.forEach(el => {
+                            el.style.fontSize = '2.5rem';
+                            el.style.lineHeight = '1.2';
+                        });
+                        numberElements.forEach(el => el.style.fontSize = '3rem');
+                        descriptionElements.forEach(el => el.style.fontSize = '0.8rem');
+                        smallEnElements.forEach(el => el.style.fontSize = '0.75rem');
+                    } else if (width < 1024) {
+                        // 中等屏幕
+                        titleElements.forEach(el => {
+                            el.style.fontSize = '3rem';
+                            el.style.lineHeight = '1.1';
+                        });
+                        numberElements.forEach(el => el.style.fontSize = '3.5rem');
+                        descriptionElements.forEach(el => el.style.fontSize = '0.875rem');
+                        smallEnElements.forEach(el => el.style.fontSize = '0.75rem');
+                    } else {
+                        // 大屏幕
+                        titleElements.forEach(el => {
+                            el.style.fontSize = '3.5rem';
+                            el.style.lineHeight = '1.1';
+                        });
+                        numberElements.forEach(el => el.style.fontSize = '4rem');
+                        descriptionElements.forEach(el => el.style.fontSize = '0.875rem');
+                        smallEnElements.forEach(el => el.style.fontSize = '0.75rem');
+                    }
+                }
+
+                // 初始调整和窗口大小变化时调整
+                adjustFontSizes();
+                window.addEventListener('resize', adjustFontSizes);
+
+            } catch (error) {
+                console.error('页面初始化错误:', error);
+            }
+        });
+
+        // 页面加载完成提示
+        console.log('精算学专业解析页面加载完成');
+    </script>
+</body>
+</html>

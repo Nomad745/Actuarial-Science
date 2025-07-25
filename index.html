@@ -6,19 +6,8 @@
     <title>精算学专业深度解析</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        // 配置 Tailwind CSS
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'tesla-red': '#E31937'
-                    }
-                }
-            }
-        }
-    </script>
     <style>
+        /* 确保红色在所有环境中都能正常显示 */
         :root {
             --tesla-red: #E31937;
         }
@@ -27,17 +16,17 @@
             color: #ffffff;
             font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
         }
-        。tesla-red {
-            color: var(--tesla-red);
+        .tesla-red {
+            color: #E31937 !important;
         }
-        。bg-tesla-red {
-            background-color: var(--tesla-red);
+        .bg-tesla-red {
+            background-color: #E31937 !important;
         }
-        。border-tesla-red {
-            border-color: var(--tesla-red);
+        .border-tesla-red {
+            border-color: #E31937 !important;
         }
         .bg-tesla-red-dark {
-            background-color: rgba(227, 25, 55, 0.2);
+            background-color: rgba(227, 25, 55, 0.2) !important;
         }
         .card-hover {
             transition: all 0.3s ease;
@@ -139,7 +128,7 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: linear-gradient(90deg, var(--tesla-red), transparent);
+            background: linear-gradient(90deg, #E31937, transparent);
         }
         
         .counter {
@@ -413,7 +402,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="border-b border-gray-800 bg-red-900/10">
+                        <tr class="border-b border-gray-800" style="background-color: rgba(127, 29, 29, 0.1);">
                             <td class="p-4 font-bold tesla-red">精算学</td>
                             <td class="p-4">金融数学、随机过程、生存模型、风险理论、信度理论</td>
                             <td class="p-4">风险量化建模、精确定价、复杂数理分析</td>
@@ -697,11 +686,7 @@
                         <h4 class="text-lg font-bold text-gray-100">CCA相关证书</h4>
                         <p class="text-sm text-gray-400 mb-3">专业精算认证</p>
                     </div>
-                    <p class="text-sm text-gray-300 leading-relaxed mb-2">专业精算领域的权威认证，直接对应精算师职业发展路径</p>
-                    <div class="text-xs text-tesla-red bg-red-900/20 p-2 rounded">
-                        <i class="fas fa-exclamation-triangle mr-1"></i>
-
-                    </div>
+                    <p class="text-sm text-gray-300 leading-relaxed">专业精算领域的权威认证，直接对应精算师职业发展路径</p>
                 </div>
             </div>
 
